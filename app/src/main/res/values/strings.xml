@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">MarketApp</string>
+
+    <!-- String Main Activity -->
+    <string name="activity_main_title">Formulario de Registro</string>
+    <string name="main_activity_names">Ingrese sus nombres</string>
+    <string name="activity_main_age">Ingrese su edad</string>
+    <string name="activity_main_terms">Aceptar los terminos</string>
+    <string name="activity_main_gender_male">Masculino</string>
+    <string name="activity_main_gender_female">Femenino</string>
+    <string name="activity_main_validation_names">Por favor, ingrese sus nombres</string>
+    <string name="activity_main_validation_age">Por favor, ingrese su edad</string>
+    <!-- String Register Fragment -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="fragment_register_title">REGISTER SCREEN</string>
+    <string name="fragment_list_title">List Screen</string>
+    <string name="fragment_login_header">Iniciar sesión</string>
+    <string name="fragment_login_helper_email">Correo electrónico</string>
+    <string name="fragment_login_helper_password">Contraseña</string>
+    <string name="fragment_registration_user_title">Crear Cuenta</string>
+    <string name="fragment_registration_user_names">Nombres</string>
+    <string name="fragment_registration_user_lastName">Apellidos</string>
+    <string name="fragment_registration_user_email">Correo electronico</string>
+    <string name="fragment_registration_user_phone">Numero celular</string>
+    <string name="fragment_registration_user_gender">Genero</string>
+    <string name="fragment_registration_user_document">Numero de documento</string>
+    <string name="fragment_registration_user_password">Contraseña</string>
+    <string name="fragment_registration_user_create_account">Crear cuenta</string>
+    <string name="menu_categories">Categorias</string>
+    <string name="menu_location">Ubicanos</string>
+    <string name="key_maps">AIzaSyD1v1OB8D1RCTOKW4ePnjBgvw6FqHwtN_4</string>
+    <string name="menu_category_admin">Crear categorias</string>
+    <string name="fragment_category_admin_name">Nombre</string>
+    <string name="fragment_category_admin_galery">Galeria</string>
+    <string name="fragment_category_admin_save">Grabar</string>
+    <string name="dialog_category_camera">Camara</string>
+    <string name="dialog_category_galery">Galeria</string>
+    <string name="fragment_category_admin_options">Cargar Imagen</string>
+    <string name="detail_product_characteristics">Caracteriticas</string>
+    <string name="fragment_detail_add_cart">Agregar</string>
+
+
+</resources>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MarketApp</string>
+
+    <!-- String Main Activity -->
+    <string name="activity_main_title">Formulario de Registro</string>
+    <string name="main_activity_names">Ingrese sus nombres</string>
+    <string name="activity_main_age">Ingrese su edad</string>
+    <string name="activity_main_terms">Aceptar los terminos</string>
+    <string name="activity_main_gender_male">Masculino</string>
+    <string name="activity_main_gender_female">Femenino</string>
+    <string name="activity_main_validation_names">Por favor, ingrese sus nombres</string>
+    <string name="activity_main_validation_age">Por favor, ingrese su edad</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="fragment_register_title">REGISTER SCREEN</string>
+    <string name="fragment_list_title">List Screen</string>
+    <string name="fragment_login_header">Iniciar sesión</string>
+    <string name="fragment_login_helper_email">Correo electrónico</string>
+    <string name="fragment_login_helper_password">Contraseña</string>
+    <string name="fragment_registration_user_title">Crear Cuenta</string>
+    <string name="fragment_registration_user_names">Nombres</string>
+    <string name="menu_categories">Categorias</string>
+
+</resources>
