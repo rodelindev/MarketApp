@@ -8,6 +8,7 @@ import androidx.security.crypto.MasterKeys
 import com.rodelindev.marketapp.data.remote.RemoteService
 import com.rodelindev.marketapp.data.database.AppDatabase
 import com.rodelindev.marketapp.data.database.CategoryDao
+import com.rodelindev.marketapp.data.database.ProductDao
 import com.rodelindev.marketapp.data.datasource.*
 import com.rodelindev.marketapp.data.repositories.UserRepository
 import com.rodelindev.marketapp.domain.usescases.UseCaseLogin
@@ -62,7 +63,6 @@ object AppModule {
         return CategoryLocalDataSourceImp(categoryDao)
     }
 
-
     @Provides
     @Singleton
     fun provideProductDataSource(remoteService: RemoteService, sharedPreferences: SharedPreferences) : ProductDataSource{
@@ -108,5 +108,15 @@ object AppModule {
     @Provides
     @Singleton
     fun provideDao(db:AppDatabase) : CategoryDao = db.categoryDao()
+
+    @Provides
+    @Singleton
+    fun provideProductDao(db:AppDatabase) : ProductDao = db.productDao()
+
+    @Provides
+    @Singleton
+    fun provideProductLocalDataSource(productDao: ProductDao) : ProductLocalDataSource{
+        return ProductLocalDataSourceImp(productDao)
+    }
 
 }

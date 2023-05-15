@@ -48,7 +48,8 @@ class ProductFragment : Fragment() {
 
     private fun setupAdapter() = with(binding) {
         adapter = ProductAdapter() { product ->
-            val directions = ProductFragmentDirections.actionProductFragmentToProductDetailFragment(product)
+            val categoryId = safeArgs.uuid
+            val directions = ProductFragmentDirections.actionProductFragmentToProductDetailFragment(product, categoryId)
             Navigation.findNavController(root).navigate(directions)
         }
         rvProducts.adapter = adapter

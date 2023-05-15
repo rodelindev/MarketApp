@@ -2,7 +2,8 @@ package com.rodelindev.marketapp.domain.model
 
 import android.os.Parcelable
 import com.rodelindev.marketapp.data.remote.model.ProductRemote
-import kotlinx.android.parcel.Parcelize
+/*import kotlinx.android.parcel.Parcelize*/
+import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class Product(

@@ -38,6 +38,11 @@
     <string name="fragment_category_admin_options">Cargar Imagen</string>
     <string name="detail_product_characteristics">Caracteriticas</string>
     <string name="fragment_detail_add_cart">Agregar</string>
+    <string name="menu_shopping_cart">Carrito</string>
+    <!--Mensajes-->
+    <string name="message_add_cart">Seleccione la cantidad de productos</string>
+    <string name="message_add_cart_ok">Producto Agregado al Carrito</string>
+
 
 
 </resources>

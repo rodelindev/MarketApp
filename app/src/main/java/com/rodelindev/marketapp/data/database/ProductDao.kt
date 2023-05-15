@@ -15,7 +15,7 @@ interface ProductDao {
     @Query("SELECT * FROM table_product")
     fun getAllLocalProduct() : Flow<List<DBProduct>>
 
-    @Query("SELECT *FROM table_product WHERE uuid=:id")
+    @Query("SELECT *FROM table_product WHERE productId=:id")
     suspend fun findProductByUuid(id: String) : DBProduct
 
     @Update
@@ -25,12 +25,6 @@ interface ProductDao {
     suspend fun deleteProduct(dbProduct: DBProduct)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertProduct(dbProduct: List<DBProduct>)
+    suspend fun saveProduct(vararg dbProduct: DBProduct)
 
-    //Others
-    /*@Query("SELECT COUNT(uuid) from table_product")
-    suspend fun counter():Int*/
-
-    /*@Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(dbProduct: List<DBProduct>)*/
 }

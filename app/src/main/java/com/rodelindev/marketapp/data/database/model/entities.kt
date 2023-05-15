@@ -25,30 +25,28 @@ data class DBCategory(
 
 @Entity(tableName = "table_product")
 data class DBProduct(
-    @PrimaryKey(autoGenerate = false)
+    @PrimaryKey(autoGenerate = true)
+    val proId: Int,
+
+    @ColumnInfo(name = "productId")
     @NonNull
-    val uuid: String,
+    val productId: String,
 
-    @ColumnInfo(name = "quantity")
-    val quantity: Int,
+    @ColumnInfo(name = "categoryId")
+    @NonNull
+    val categoryId: String,
 
-    @ColumnInfo(name = "features")
-    val features: String,
-
-    @ColumnInfo(name = "code")
-    val code: String,
+    @ColumnInfo(name = "images")
+    val image: String,
 
     @ColumnInfo(name = "description")
     val description: String,
 
-    @ColumnInfo(name = "images")
-    val images: String,
+    @ColumnInfo(name = "quantity")
+    val quantity: Int,
 
-    @ColumnInfo(name = "price")
-    val price: Double,
-
-    @ColumnInfo(name = "stock")
-    val stock: Int,
+    @ColumnInfo(name = "totalPay")
+    val totalPay: Double,
 )
 /*
 @Entity(tableName = "image_list")

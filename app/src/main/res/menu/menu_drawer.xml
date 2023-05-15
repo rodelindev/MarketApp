@@ -10,6 +10,10 @@
         android:icon="@drawable/icon_house"
         android:title="@string/menu_category_admin"/>
 
+    <item
+        android:id="@+id/shoppingCartFragment"
+        android:icon="@drawable/icon_shopping_cart"
+        android:title="@string/menu_shopping_cart"/>
 
     <item
         android:id="@+id/locationFragment"

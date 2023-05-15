@@ -21,5 +21,6 @@
     <string name="fragment_registration_user_title">Crear Cuenta</string>
     <string name="fragment_registration_user_names">Nombres</string>
     <string name="menu_categories">Categorias</string>
+    <string name="menu_shopping_cart">Carrito</string>
 
 </resources>
