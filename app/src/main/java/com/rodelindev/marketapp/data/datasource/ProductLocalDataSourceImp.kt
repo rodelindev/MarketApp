@@ -11,13 +11,15 @@ class ProductLocalDataSourceImp @Inject constructor(
     private val productDao: ProductDao
 ) : ProductLocalDataSource {
 
-    override fun getAllLocalProduct(): Flow<List<DBProduct>> = flow {
-        try {
-            productDao.getAllLocalProduct().collectLatest {
-                emit(it)
+    override fun getAllLocalProduct(): Flow<List<DBProduct>> {
+        return flow {
+            productDao.getAllLocalProduct().collect {
+                try {
+                    emit(it)
+                } catch (ex: Exception) {
+                    println(ex.toString())
+                }
             }
-        } catch (ex: Exception) {
-            println(ex.toString())
         }
     }
 
@@ -35,5 +37,9 @@ class ProductLocalDataSourceImp @Inject constructor(
 
     override suspend fun saveProduct(dbProduct: DBProduct) {
         productDao.saveProduct(dbProduct)
+    }
+
+    override suspend fun cleanShoppingCarts() {
+        productDao.cleanShoppingCart()
     }
 }

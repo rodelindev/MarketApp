@@ -14,4 +14,6 @@ interface ProductLocalDataSource {
     suspend fun deleteProduct(dbProduct: DBProduct)
 
     suspend fun saveProduct(dbProduct: DBProduct)
+
+    suspend fun cleanShoppingCarts()
 }

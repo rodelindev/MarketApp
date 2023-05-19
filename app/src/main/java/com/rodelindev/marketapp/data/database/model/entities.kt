@@ -37,7 +37,7 @@ data class DBProduct(
     val categoryId: String,
 
     @ColumnInfo(name = "images")
-    val image: String,
+    val image: String? = null,
 
     @ColumnInfo(name = "description")
     val description: String,

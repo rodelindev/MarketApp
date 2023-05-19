@@ -42,7 +42,7 @@
     <!--Mensajes-->
     <string name="message_add_cart">Seleccione la cantidad de productos</string>
     <string name="message_add_cart_ok">Producto Agregado al Carrito</string>
-
+    <string name="product_description">Product Description</string>
 
 
 </resources>

@@ -76,7 +76,7 @@ class ProductDetailFragment : Fragment() {
             viewLifecycleOwner.lifecycleScope.launch {
 
                 if (productQuantity != 0) {
-                    viewModel.insertProduct(
+                    viewModel.saveLocalProduct(
                         DBProduct(
                             proId = 0,
                             productId = productData.uuid,

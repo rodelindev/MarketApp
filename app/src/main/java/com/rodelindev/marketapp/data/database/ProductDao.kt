@@ -24,6 +24,9 @@ interface ProductDao {
     @Delete
     suspend fun deleteProduct(dbProduct: DBProduct)
 
+    @Query("DELETE FROM table_product" )
+    suspend fun cleanShoppingCart()
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun saveProduct(vararg dbProduct: DBProduct)
 

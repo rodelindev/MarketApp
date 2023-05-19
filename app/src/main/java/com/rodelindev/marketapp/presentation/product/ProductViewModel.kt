@@ -18,16 +18,17 @@ class ProductViewModel @Inject constructor(
     private val _state = MutableStateFlow(ProductState())
     val state: StateFlow<ProductState> get() = _state
 
-    fun populateProducts(idCategory: String) {
+    fun populateProducts(idCategory:String) {
 
         viewModelScope.launch {
+
             _state.update { it.copy(isLoading = true) }
 
-            try {
+            try{
                 productRepository.populateProducts(idCategory).catch {
 
                 }.onEach { result ->
-                    when (result) {
+                    when(result){
                         is Result.Error -> {
                             _state.update { it.copy(error = result.message) }
                         }
@@ -37,9 +38,9 @@ class ProductViewModel @Inject constructor(
                     }
                 }.stateIn(viewModelScope)
 
-            } catch (ex: Exception) {
+            }catch (ex:Exception){
                 _state.update { it.copy(error = ex.message) }
-            } finally {
+            }finally {
                 _state.update { it.copy(isLoading = false) }
             }
 

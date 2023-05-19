@@ -13,8 +13,7 @@ class ProductDetailViewModel @Inject constructor(
     private val productRepository: ProductRepository
 ): ViewModel() {
 
-
-    suspend fun insertProduct(dbProduct: DBProduct) = viewModelScope.launch {
-        productRepository.insertProduct(dbProduct)
+    suspend fun saveLocalProduct(dbProduct: DBProduct) = viewModelScope.launch {
+        productRepository.saveLocalProduct(dbProduct)
     }
 }

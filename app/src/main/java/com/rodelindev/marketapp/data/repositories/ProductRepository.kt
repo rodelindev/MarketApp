@@ -11,14 +11,20 @@ class ProductRepository @Inject constructor(
     private val productLocalDataSource: ProductLocalDataSource
 ) {
 
-    suspend fun populateProducts(idCategory: String) =
-        productDataSource.populateProducts(idCategory)
+    suspend fun populateProducts(idCategory: String) = productDataSource.populateProducts(idCategory)
 
     fun getAllLocalProduct(): Flow<List<DBProduct>> = productLocalDataSource.getAllLocalProduct()
 
-    suspend fun insertProduct(dbProduct: DBProduct) =
+    suspend fun saveLocalProduct(dbProduct: DBProduct) {
         productLocalDataSource.saveProduct(dbProduct)
+    }
 
-    suspend fun deleteProduct(dbProduct: DBProduct) =
+    suspend fun deleteProduct(dbProduct: DBProduct) {
         productLocalDataSource.deleteProduct(dbProduct)
+    }
+
+    suspend fun cleanShoppingCart() {
+        productLocalDataSource.cleanShoppingCarts()
+    }
 }
+

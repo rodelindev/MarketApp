@@ -50,6 +50,9 @@ class SingleDrawerActivity : AppCompatActivity() {
                 "fragment_location" -> {
                     binding.imgMenu.setBackgroundResource(R.drawable.icon_menu)
                 }
+                "fragment_shopping_cart" -> {
+                    binding.imgMenu.setBackgroundResource(R.drawable.icon_menu)
+                }
             }
         })
     }
