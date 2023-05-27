@@ -101,33 +101,6 @@ class RegistrationUserFragment : Fragment() {
                 genderCode = genders[position].gender
                 println(genderCode)
             }
-
-        //LISTAS
-        //MUTABLES
-        /*val numbers= mutableListOf(2,8,10,12,18,20)
-
-        numbers.forEach {
-
-        }
-
-        val numbersFilter = numbers.filter {
-            it > 10
-        }
-
-
-
-
-        //IMMUTABLES
-        val days = listOf("Lunes","Martes","Miercoles")
-        days[0] //Lunes
-        days[2] //Miercoles
-        days.first()
-        days.last()
-
-        days.forEach {
-
-        }*/
-
     }
 
 

@@ -43,6 +43,7 @@
     <string name="message_add_cart">Seleccione la cantidad de productos</string>
     <string name="message_add_cart_ok">Producto Agregado al Carrito</string>
     <string name="product_description">Product Description</string>
+    <string name="empty_cart">El carrito esta vacio seleccione un producto</string>
 
 
 </resources>

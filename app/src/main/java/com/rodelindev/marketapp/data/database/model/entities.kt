@@ -5,6 +5,9 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
+import com.rodelindev.marketapp.data.remote.model.ProductRemote
+import com.rodelindev.marketapp.data.remote.model.ProductRequest
+import com.rodelindev.marketapp.domain.model.Product
 
 @Entity(tableName = "table_category")
 data class DBCategory(
@@ -48,10 +51,13 @@ data class DBProduct(
     @ColumnInfo(name = "totalPay")
     val totalPay: Double,
 )
-/*
-@Entity(tableName = "image_list")
-data class DBImage(
-    @ColumnInfo(name = "image")
-    val images: String
-)*/
+
+fun List<DBProduct>.toProductRequest(): List<ProductRequest> = map {
+    ProductRequest(
+        categoryId = it.categoryId,
+        productId = it.productId,
+        productAmount = it.totalPay.toInt(),
+    )
+}
+
 

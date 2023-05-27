@@ -53,5 +53,13 @@
         android:id="@+id/shoppingCartFragment"
         android:name="com.rodelindev.marketapp.presentation.shoppingcart.ShoppingCartFragment"
         android:label="fragment_shopping_cart"
-        tools:layout="@layout/fragment_shopping_cart" />
+        tools:layout="@layout/fragment_shopping_cart" >
+        <action
+            android:id="@+id/action_shoppingCartFragment_to_newShoppingFragment"
+            app:destination="@id/newShoppingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newShoppingFragment"
+        android:name="com.rodelindev.marketapp.presentation.newshopping.NewShoppingFragment"
+        android:label="NewShoppingFragment" />
 </navigation>

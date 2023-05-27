@@ -22,11 +22,17 @@ interface RemoteService {
     suspend fun createAccount(@Body request: CreateAccountRequest): Response<LoginRemote>
 
     @GET("api/categorias")
-    suspend fun getCategories(@Header("Authorization") token:String) : Response<CategoryDto>
+    suspend fun getCategories(@Header("Authorization") token: String): Response<CategoryDto>
 
     @GET("/api/categorias/{categoriaId}/productos")
-    suspend fun getProducts(@Header("Authorization") token:String, @Path("categoriaId") categoryId:String) : Response<ProductDto>
+    suspend fun getProducts(
+        @Header("Authorization") token: String,
+        @Path("categoriaId") categoryId: String
+    ): Response<ProductDto>
 
-    @GET("/api/compras/{categoriaId}/productos")
-    suspend fun shoppingProducts(@Header("Authorization") token:String, @Body request: ShippingRequest) : Response<ShoppingDto>
+    @POST("/api/compras/nueva-compra")
+    suspend fun getNewShopping(
+        @Header("Authorization") token: String,
+        @Body request: ShippingRequest
+    ): Response<ShoppingDto>
 }

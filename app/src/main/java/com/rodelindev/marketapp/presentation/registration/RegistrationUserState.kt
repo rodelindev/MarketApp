@@ -1,5 +1,6 @@
 package com.rodelindev.marketapp.presentation.registration
 
+import com.rodelindev.marketapp.data.remote.model.ShoppingDto
 import com.rodelindev.marketapp.domain.model.Gender
 import com.rodelindev.marketapp.domain.model.User
 

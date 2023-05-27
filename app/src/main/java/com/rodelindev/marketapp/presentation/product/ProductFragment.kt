@@ -39,11 +39,9 @@ class ProductFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentProductBinding.bind(view)
 
-
         init()
         setupAdapter()
         collectData()
-
     }
 
     private fun setupAdapter() = with(binding) {

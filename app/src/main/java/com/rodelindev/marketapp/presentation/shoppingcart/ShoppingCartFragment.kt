@@ -9,6 +9,8 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.Navigation
+import com.google.android.material.snackbar.Snackbar
 import com.rodelindev.marketapp.R
 import com.rodelindev.marketapp.databinding.FragmentProductDetailBinding
 import com.rodelindev.marketapp.databinding.FragmentShoppingCartBinding
@@ -43,6 +45,22 @@ class ShoppingCartFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setupObservers()
         setupAdapter()
+        events()
+    }
+
+    private fun events() = with(binding) {
+        btnCheckIn.setOnClickListener {
+            if (viewModel.state.value.products!!.isNotEmpty()) {
+                Navigation.findNavController(binding.root)
+                    .navigate(R.id.action_shoppingCartFragment_to_newShoppingFragment)
+            } else {
+                Snackbar.make(
+                    binding.btnCheckIn,
+                    getString(R.string.empty_cart),
+                    Snackbar.LENGTH_LONG
+                ).show()
+            }
+        }
     }
 
     private fun setupAdapter() = with(binding) {
@@ -56,9 +74,9 @@ class ShoppingCartFragment : Fragment() {
     }
 
     private fun setupObservers() {
-        viewLifecycleOwner.lifecycleScope.launch{
-            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED){
-                viewModel.state.collect{ state ->
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                viewModel.state.collect { state ->
                     updateUI(state)
                 }
             }
@@ -69,6 +87,8 @@ class ShoppingCartFragment : Fragment() {
 
         state?.products?.let { products ->
             adapter.submitList(products)
+            val totalPay = products.sumOf { it.totalPay }.toString()
+            binding.tvTotalPay.text = "S/$totalPay"
         }
 
         state?.error?.let {
@@ -76,7 +96,7 @@ class ShoppingCartFragment : Fragment() {
         }
 
         state?.isLoading?.let {
-            if(it) progressBar.visibility = View.VISIBLE
+            if (it) progressBar.visibility = View.VISIBLE
             else progressBar.visibility = View.GONE
         }
 

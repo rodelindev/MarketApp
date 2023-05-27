@@ -47,6 +47,12 @@ object AppModule {
 
     @Provides
     @Singleton
+    fun provideNewShoppingDataSource(sharedPreferences: SharedPreferences, remoteService: RemoteService) : NewShoppingDataSource{
+        return NewShoppingDataSourceImp(sharedPreferences,remoteService)
+    }
+
+    @Provides
+    @Singleton
     fun provideGenderDataSource(remoteService: RemoteService) : GenderDataSource{
         return GenderDataSourceImp(remoteService)
     }
@@ -72,13 +78,11 @@ object AppModule {
     @Provides
     @Singleton
     fun provideUseCasesLogin(userRepository: UserRepository): UseCaseLogin{
-
         return UseCaseLogin(
             validateEmail = ValidateEmail(),
             validatePassword = ValidatePassword(),
             authenticateUser = AuthenticateUser(userRepository)
         )
-
     }
 
     @Provides
